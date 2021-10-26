@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj": {}
+    "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj": {
+    "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj",
+        "projectPath": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\hyden\\.nuget\\packages\\",
-        "outputPath": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\obj\\",
+        "outputPath": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hyden\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj": {
+    "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj",
+        "projectPath": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\hyden\\.nuget\\packages\\",
-        "outputPath": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\obj\\",
+        "outputPath": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hyden\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -75,14 +75,15 @@
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj": {
-                "projectPath": "e:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj"
+              "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\MyProjects\\LearnDotNetAndReact\\Reactivities\\Domain\\Domain.csproj"
               }
             }
           }

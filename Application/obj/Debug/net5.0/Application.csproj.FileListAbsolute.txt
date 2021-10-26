@@ -31,3 +31,4 @@ E:\MyProjects\LearnDotNetAndReact\Reactivities\Application\obj\Debug\net5.0\Appl
 E:\MyProjects\LearnDotNetAndReact\Reactivities\Application\obj\Debug\net5.0\Application.dll
 E:\MyProjects\LearnDotNetAndReact\Reactivities\Application\obj\Debug\net5.0\ref\Application.dll
 E:\MyProjects\LearnDotNetAndReact\Reactivities\Application\obj\Debug\net5.0\Application.pdb
+E:\MyProjects\LearnDotNetAndReact\Reactivities\Application\obj\Debug\net5.0\Application.csproj.CopyComplete
