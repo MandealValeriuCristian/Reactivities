@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-dom": "^17.0.10",
     "axios": "^0.24.0",
     "cra-template-typescript": "1.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^3.4.4"
+    "react-scripts": "^3.4.4",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,6 +36,12 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.33"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/react": "^17.0.33",
+    "jest-dom": "^4.0.0",
+    "react-testing-library": "^8.0.1",
+    "web-vitals": "^2.1.2"
   }
 }
