@@ -52,7 +52,7 @@ namespace API
             }
 
             // app.UseHttpsRedirection();
-            app.UseDeveloperExceptionPage();
+            // app.UseDeveloperExceptionPage(); // for debugging
 
             app.UseRouting();
 
