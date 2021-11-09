@@ -4,9 +4,10 @@ import { Activity } from '../../../app/models/activity';
 interface Props{
     activity: Activity | undefined;
     closeForm: () => void;
+    createOrEdit: (activity: Activity) => void;
 }
 
-export default function ACtivityForm({activity: selectedActivity, closeForm}: Props){
+export default function ACtivityForm({activity: selectedActivity, closeForm, createOrEdit}: Props){
     const initialState = selectedActivity ?? {
         id: '',
         title: '',
@@ -22,11 +23,11 @@ export default function ACtivityForm({activity: selectedActivity, closeForm}: Pr
         setActivity({...activity, [name]: value})
     }
     function handleSubmit() {
-        console.log(activity);
+        createOrEdit(activity);
     }
     return (
         <Segment clearing>
-            <Form onSubmit={handleSubmit} autoComplete='off'>
+        <Form onSubmit={handleSubmit} autoComplete='off'>
                 <Form.Input placeholder='Title' value={activity.title} name='title' onChange={handleInputChange}/>
                 <Form.Input placeholder='Description'value={activity.description} name='description' onChange={handleInputChange}/>
                 <Form.Input placeholder='Category'value={activity.category} name='category' onChange={handleInputChange}/>
