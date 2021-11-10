@@ -11,7 +11,8 @@
     "react-scripts": "^3.4.4",
     "react-test-renderer": "^17.0.2",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.4"
+    "semantic-ui-react": "^2.0.4",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +43,7 @@
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.33",
+    "@types/uuid": "^8.3.1",
     "jest-dom": "^4.0.0",
     "react-testing-library": "^8.0.1",
     "web-vitals": "^2.1.2"
