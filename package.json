@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "web-vitals": "^2.1.2"
+  },
+  "dependencies": {
+    "mobx": "^6.3.7",
+    "mobx-react-lite": "^3.2.2"
   }
 }
