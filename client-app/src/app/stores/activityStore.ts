@@ -1,4 +1,4 @@
-import { action, makeAutoObservable, makeObservable, observable } from "mobx";
+import { makeAutoObservable} from "mobx";
 import agent from "../api/agent";
 import { Activity } from "../models/activity";
 
@@ -9,7 +9,7 @@ export default class ActivityStore{
     loading = false;
     loadingInitial = false;
     constructor(){
-        makeAutoObservable(this)
+       makeAutoObservable(this)
     }
     loadActivities = async () => {
         this.setLoadingInitial(true);
