@@ -17,6 +17,7 @@ export default class ActivityStore{
         Date.parse(a.date) - Date.parse(b.date));
     }
     loadActivities = async () => {
+        this.loadingInitial = true; // added wrong in previous commit (added in loadActivity)
         try {
             const activities = await agent.Activities.list();
             activities.forEach( activity =>{
@@ -30,19 +31,22 @@ export default class ActivityStore{
     }
 
     loadActivity = async (id: string) => {
-        this.loadingInitial = true;
         let activity = this.getActivity(id);
         if(activity)
         {
             this.selectedActivity = activity;
+            return activity;
         }
         else{
             this.loadingInitial = true;
             try {
                 activity = await agent.Activities.details(id);
                 this.setActivity(activity);
-                this.selectedActivity = activity;
+                runInAction(() => {
+                    this.selectedActivity = activity;                    
+                })
                 this.setLoadingInitial(false);
+                return activity;
             } catch (error) {
                 console.log(error);
                 this.setLoadingInitial(false);
