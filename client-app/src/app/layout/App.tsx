@@ -6,12 +6,12 @@ import { observer } from 'mobx-react-lite';
 import { Route } from 'react-router-dom';
 import ActivityForm from '../../features/activities/form/ActivityForm';
 import HomePage from '../../features/activities/home/HomePage';
-import ActivityList from '../../features/activities/dashboard/ActivityList';
 import ActivityDetails from '../../features/activities/details/ActivityDetails';
 function App() {
 
   return (
-    <Fragment> /* short version of fragment <> ... </> */
+    <Fragment> 
+      {/* /* short version of fragment <> ... </> */ }
         <NavBar/>
        <Container style={{marginTop: '7em'}}>
          <Route exact path='/' component={HomePage}/>

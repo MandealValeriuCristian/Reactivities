@@ -1,15 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button, Container, Menu } from 'semantic-ui-react';
-import { useStore } from '../stores/store';
 
-interface Props{
-    openForm: () => void;
-}
 
 export default function NavBar(){
-    const {activityStore} = useStore();
-    return (
+        return (
         <Menu inverted fixed='top'>
             <Container>
                 <Menu.Item as={NavLink} to='/' exact header>
