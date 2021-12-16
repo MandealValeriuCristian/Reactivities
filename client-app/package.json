@@ -8,6 +8,7 @@
     "@types/yup": "^0.29.13",
     "axios": "^0.24.0",
     "cra-template-typescript": "1.1.2",
+    "date-fns": "^2.27.0",
     "formik": "^2.2.6",
     "mobx": "^6.3.7",
     "mobx-react-lite": "^3.2.2",
