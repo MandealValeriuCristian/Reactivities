@@ -14,6 +14,7 @@ import ServerError from '../../features/errors/ServerError';
 import LoginForm from '../../features/users/LoginForm';
 import { useStore } from '../stores/store';
 import LoadingComponent from './LoadingComponent';
+import ModalContainer from '../common/modals/ModalContainer';
 function App() {
   const location = useLocation();
   const {commonStore, userStore} = useStore();
@@ -31,6 +32,7 @@ function App() {
     <Fragment> 
       <ToastContainer position='bottom-right' hideProgressBar />
       {/* /* short version of fragment <> ... </> */ }
+      <ModalContainer />
       <Route exact path='/' component={HomePage}/>
       <Route
       path={'/(.+)'}
