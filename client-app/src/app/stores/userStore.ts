@@ -33,11 +33,11 @@ export default class UserStore {
   getUser = async () => {
     try {
       const user = await agent.Account.current();
-      runInAction(() => this.user = user);
+      runInAction(() => (this.user = user));
     } catch (error) {
       console.log(error);
     }
-  }
+  };
   register = async (creds: UserFormValues) => {
     try {
       const user = await agent.Account.register(creds);
@@ -48,5 +48,5 @@ export default class UserStore {
     } catch (error) {
       throw error;
     }
-  }
+  };
 }
