@@ -32,12 +32,4 @@ export default class CommonStore {
         this.appLoaded = true;
     }
 
-    getUser = async () => {
-        try {
-            const user = await agent.Account.current();
-            runInAction(() => this.user = user);
-        } catch (error) {
-            console.log(error)
-        }
-    }
 }
