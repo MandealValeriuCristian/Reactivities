@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Domain
 {
@@ -10,6 +11,8 @@ namespace Domain
         public string Description { get; set; }
         public string Category { get; set; }
         public string City { get; set; }
-        public string Venue { get; set; }        
+        public string Venue { get; set; }       
+
+        public ICollection<ActivityAttendee> Attendees { get; set; } 
     }
 }
