@@ -1,6 +1,8 @@
 using Application.Activities;
 using Application.Core;
+using Application.Interfaces;
 using AutoMapper;
+using Infrastructure.Security;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -24,13 +26,14 @@ namespace API.Extensions
             });
             services.AddCors(opt =>
             {
-                opt.AddPolicy("CorsPolicy", policy=>
+                opt.AddPolicy("CorsPolicy", policy =>
                 {
                     policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+            services.AddScoped<IUserAccessor, UserAccessor>();
             return services;
         }
     }
