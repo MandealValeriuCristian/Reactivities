@@ -1,24 +1,38 @@
 import { format } from 'date-fns';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Icon, Item, Segment } from 'semantic-ui-react';
+import { Button, Icon, Item, Label, List, Segment } from 'semantic-ui-react';
 import { Activity } from '../../../app/models/activity';
 import ActivityListItemAttendee from './ActivityListItemAttendee';
-interface Props{
+interface Props {
     activity: Activity
 }
-export default function ActivityListItem({activity}: Props) {
+export default function ActivityListItem({ activity }: Props) {
     return (
         <Segment.Group>
             <Segment>
                 <Item.Group>
                     <Item>
-                        <Item.Image size='tiny'circular src='/assets/user.png'/>
+                        <Item.Image size='tiny' circular src='/assets/user.png' />
                         <Item.Content>
                             <Item.Header as={Link} to={`/activities/${activity.id}`}>
                                 {activity.title}
                             </Item.Header>
-                            <Item.Description>Hosted by Bob</Item.Description>
+                            <Item.Description>Hosted by {activity.host?.displayName}</Item.Description>
+                            {activity.isHost && (
+                                <Item.Description>
+                                    <Label basic color='orange'>
+                                        You are hosting this activity
+                                    </Label>
+                                </Item.Description>
+                            )}
+                            {activity.isGoing && !activity.isHost && (
+                                <Item.Description>
+                                    <Label basic color='green'>
+                                        You are going to this activity
+                                    </Label>
+                                </Item.Description>
+                            )}
                         </Item.Content>
                     </Item>
                 </Item.Group>
@@ -30,16 +44,16 @@ export default function ActivityListItem({activity}: Props) {
                 </span>
             </Segment>
             <Segment secondary>
-               <ActivityListItemAttendee attendees={activity.attendees!} />
+                <ActivityListItemAttendee attendees={activity.attendees!} />
             </Segment>
             <Segment clearing>
                 <span>{activity.description}</span>
                 <Button
-                as={Link}
-                to={`/activities/${activity.id}`}
-                color='teal'
-                floated='right'
-                content='View'
+                    as={Link}
+                    to={`/activities/${activity.id}`}
+                    color='teal'
+                    floated='right'
+                    content='View'
                 />
             </Segment>
         </Segment.Group>
