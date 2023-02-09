@@ -17,6 +17,7 @@ export default observer(function ActivityList() {
                         {group}
                     </Header>                
                             {activities.map(activity => (
+                                console.log(activity.id),
                                 <ActivityListItem key={activity.id} activity={activity} />
                             ))}                        
                 </Fragment>
