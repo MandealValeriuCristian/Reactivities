@@ -2,7 +2,7 @@ import { Fragment, useEffect } from 'react';
 import { Container } from 'semantic-ui-react';
 import NavBar from './navbar';
 import { observer } from 'mobx-react-lite';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { useStore } from '../stores/store';
 import LoadingComponent from './LoadingComponent';
@@ -22,9 +22,12 @@ function App() {
   if (!commonStore.appLoaded) return <LoadingComponent content="Loading app..." />
 
   return (
+
     <Fragment> {/* short version of fragment <> ... </> */}
-      <ToastContainer position='bottom-right' hideProgressBar />
-      <ModalContainer />
+    <ScrollRestoration />
+    <ModalContainer />
+      <ToastContainer position='bottom-right' hideProgressBar theme='colored'/>
+      
       {location.pathname === '/' ? <HomePage /> :
         (<>
           <NavBar />
