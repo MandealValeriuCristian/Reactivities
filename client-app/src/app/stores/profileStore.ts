@@ -169,9 +169,14 @@ export default class ProfileStore {
         try {
             await agent.Profiles.updateProfile(profile);
             runInAction(() => {
-                if (profile.displayName && profile.displayName !== store.userStore.user?.displayName) {
+                if (profile.displayName 
+                    && profile.displayName !== store.userStore.user?.displayName) {
                     store.userStore.setDisplayName(profile.displayName);
                 }
+                if (profile?.bio
+                    && profile?.bio !== store.profileStore.currentUserProfile?.bio) {
+                        store.userStore.setProfileBio(profile.bio);
+                    }
                 this.profile = {...this.profile, ...profile as Profile};
                 this.loading = false;
             })
