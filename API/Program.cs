@@ -53,9 +53,12 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapControllers();
 app.MapHub<ChatHub>("/chat");
-
+app.MapFallbackToController("Index", "Fallback");
 #endregion Configure the HTTP request pipeline (old Startup class)
 
 #region Seeding data to database (old default program class)
