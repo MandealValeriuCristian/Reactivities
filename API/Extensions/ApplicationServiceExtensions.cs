@@ -59,10 +59,11 @@ namespace API.Extensions
                 {
                     opt.AddPolicy("CorsPolicy", policy =>
                     {
-                        policy.AllowAnyMethod()
+                        policy.AllowAnyOrigin()
+                            .AllowAnyMethod()
                             .AllowAnyHeader()
-                            .AllowCredentials()
-                            .AllowAnyOrigin();
+                            .AllowCredentials();
+                            
                             // .WithOrigins("http://localhost:3000");
                     });
                 });
