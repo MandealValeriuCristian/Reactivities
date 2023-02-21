@@ -55,19 +55,21 @@ namespace API.Extensions
                     connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};";
                 }
 
+            services.AddCors(opt =>
+                {
+                    opt.AddPolicy("CorsPolicy", policy =>
+                    {
+                        policy.AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials()
+                            .WithOrigins("http://localhost:3000",
+                            "https://reactivities-steel.vercel.app");
+                    });
+                });
                 // Whether the connection string came from the local development configuration file
                 // or from the environment variable from FlyIO, use it to set up your DbContext.
                 options.UseNpgsql(connStr);});
-            services.AddCors(opt =>
-            {
-                opt.AddPolicy("CorsPolicy", policy =>
-                {
-                    policy.AllowAnyMethod()
-                          .AllowAnyHeader()
-                          .AllowCredentials()
-                          .WithOrigins("http://localhost:3000");
-                });
-            });
+            
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             services.AddScoped<IUserAccessor, UserAccessor>();
