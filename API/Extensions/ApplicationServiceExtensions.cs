@@ -62,8 +62,8 @@ namespace API.Extensions
                         policy.AllowAnyMethod()
                             .AllowAnyHeader()
                             .AllowCredentials()
-                            .WithOrigins("http://localhost:3000",
-                            "https://reactivities-steel.vercel.app");
+                            .AllowAnyOrigin();
+                            // .WithOrigins("http://localhost:3000");
                     });
                 });
                 // Whether the connection string came from the local development configuration file
