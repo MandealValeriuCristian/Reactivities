@@ -1,9 +1,10 @@
 {
   "devDependencies": {
-    "web-vitals": "^2.1.2"
+    "web-vitals": "^2.1.4"
   },
   "dependencies": {
-    "mobx": "^6.3.7",
-    "mobx-react-lite": "^3.2.2"
+    "mobx": "^6.8.0",
+    "mobx-react-lite": "^3.4.0",
+    "types": "^0.1.1"
   }
 }
