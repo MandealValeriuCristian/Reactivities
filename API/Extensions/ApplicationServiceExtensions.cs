@@ -48,7 +48,7 @@ namespace API.Extensions
                     var pgHostPort = pgHostPortDb.Split("/")[0];
                     var pgDb = pgHostPortDb.Split("/")[1];
                     var pgUser = pgUserPass.Split(":")[0];
-                    var pgPass = pgUserPass.Split(":")[2];
+                    var pgPass = pgUserPass.Split(":")[1];
                     var pgHost = pgHostPort.Split(":")[0];
                     var pgPort = pgHostPort.Split(":")[1];
 
@@ -59,12 +59,11 @@ namespace API.Extensions
                 {
                     opt.AddPolicy("CorsPolicy", policy =>
                     {
-                        policy.AllowAnyOrigin()
+                        policy
                             .AllowAnyMethod()
                             .AllowAnyHeader()
-                            .AllowCredentials();
-                            
-                            // .WithOrigins("http://localhost:3000");
+                            .AllowCredentials()
+                            .WithOrigins("http://localhost:3000");
                     });
                 });
                 // Whether the connection string came from the local development configuration file
