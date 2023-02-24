@@ -26,7 +26,7 @@ namespace API.Extensions
             .AddEntityFrameworkStores<DataContext>()
             .AddSignInManager<SignInManager<AppUser>>();
             var tokenKey = Environment.GetEnvironmentVariable("TokenKey");
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey);
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opt => {
