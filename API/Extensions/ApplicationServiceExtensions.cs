@@ -30,7 +30,7 @@ namespace API.Extensions
                 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
                 
-                // Depending on if in development or production, use either FlyIO
+                // Depending on if in development or production, use either 
                 // connection string, or development connection string from env var.
                 if (env == "Development")
                 {
@@ -39,7 +39,7 @@ namespace API.Extensions
                 }
                 else
                 {
-                    // Use connection string provided at runtime by Flyio.
+                    // Use connection string provided at runtime.
                     connStr = Environment.GetEnvironmentVariable("DATABASE_URL");
 
                     // Parse connection URL to connection string for Npgsql
@@ -55,7 +55,10 @@ namespace API.Extensions
 
                     // connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};";
                 }
-
+                // Whether the connection string came from the local development configuration file
+                // or from the environment variable, use it to set up your DbContext.
+                options.UseNpgsql(connStr);
+            });
             services.AddCors(opt =>
                 {
                     opt.AddPolicy("CorsPolicy", policy =>
@@ -67,9 +70,8 @@ namespace API.Extensions
                             .WithOrigins("http://localhost:3000");
                     });
                 });
-                // Whether the connection string came from the local development configuration file
-                // or from the environment variable from FlyIO, use it to set up your DbContext.
-                options.UseNpgsql(connStr);});
+                
+                
             
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
