@@ -72,8 +72,9 @@ namespace API.Extensions
                     });
                 });
                 
-                
-            
+            services.AddAuthorization();    
+            services.AddRouting();
+            services.AddControllers();
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             services.AddScoped<IUserAccessor, UserAccessor>();
