@@ -391,3 +391,4 @@ FodyWeavers.xsd
 API/app.settings.json
 API/reactivities.db-wal
 API/reactivities.db-shm
+.vercel
