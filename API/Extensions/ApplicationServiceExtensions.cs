@@ -59,19 +59,20 @@ namespace API.Extensions
                 // or from the environment variable, use it to set up your DbContext.
                 options.UseNpgsql(connStr);
             });
-            services.AddCors(opt =>
-                {
-                    opt.AddPolicy("CorsPolicy", policy =>
-                    {
-                        policy
-                            .AllowAnyMethod()
-                            .AllowAnyHeader()
-                            .AllowCredentials()
-                            //.WithOrigins("http://localhost:3000");
-                            .AllowAnyOrigin();
-                    });
-                });
-                
+            // services.AddCors(opt =>
+            //     {
+            //         opt.AddPolicy("CorsPolicy", policy =>
+            //         {
+            //             policy
+            //                 .AllowAnyMethod()
+            //                 .AllowAnyHeader()
+            //                 //.AllowCredentials()
+            //                 //.WithOrigins("http://localhost:3000");
+            //                 .AllowAnyOrigin();
+            //         });
+            //     });
+            services.AddCors();
+            services.AddAuthorization();
                 
             
             services.AddMediatR(typeof(List.Handler).Assembly);
