@@ -38,7 +38,7 @@ namespace API.Extensions
                 }
                 else
                 {
-                    // Use connection string provided at runtime by Flyio.
+                    // Use connection string provided at runtime by FlyIO.
                     var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
                     // Parse connection URL to connection string for Npgsql
@@ -52,12 +52,13 @@ namespace API.Extensions
                     var pgHost = pgHostPort.Split(":")[0];
                     var pgPort = pgHostPort.Split(":")[1];
 
-                    connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};";
+                    connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};
                 }
 
                 // Whether the connection string came from the local development configuration file
                 // or from the environment variable from FlyIO, use it to set up your DbContext.
-                options.UseNpgsql(connStr);});
+                options.UseNpgsql(connStr);
+            });
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsPolicy", policy =>
