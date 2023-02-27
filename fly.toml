@@ -10,7 +10,7 @@ processes = []
 
 [env]
   ASPNETCORE_URLS = "http://+:8080"
-  Cloudinary_CloudName = ""
+  Cloudinary_CloudName = "dca1ta6c7"
   Cloudinary_ApiKey = "794216554693995"
   
 
