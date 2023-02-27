@@ -66,8 +66,9 @@ namespace API.Extensions
                 {
                     policy.AllowAnyMethod()
                           .AllowAnyHeader()
-                          .AllowCredentials()
-                          .WithOrigins("http://localhost:3000");
+                          .AllowAnyOrigin();
+                        //   .AllowCredentials()
+                        //   .WithOrigins("http://localhost:3000");
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
