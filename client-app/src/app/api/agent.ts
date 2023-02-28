@@ -42,7 +42,7 @@ axios.interceptors.response.use(
           toast.error(data);
         }
         if (config.method === "get" && data.errors.hasOwnProperty("id")) {
-          router.navigate("not-found");
+          router.navigate("/not-found");
         }
         if (data.errors) {
           const modalStateErrors = [];
@@ -85,7 +85,7 @@ const Activities = {
       .then(responseBody),
   details: (id: string) => requests.get<Activity>(`/activities/${id}`),
   create: (activity: ActivityFormValues) =>
-    requests.post<void>("activities", activity),
+    requests.post<void>("/activities", activity),
   update: (activity: ActivityFormValues) =>
     requests.put<void>(`/activities/${activity.id}`, activity),
   delete: (id: string) => requests.del<void>(`/activities/${id}`),
