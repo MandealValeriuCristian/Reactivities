@@ -1,4 +1,4 @@
-# fly.toml file generated for social-reactivities on 2023-02-25T14:57:31+02:00
+# fly.toml file generated for social-reactivities on 2023-03-03T13:00:35+02:00
 
 app = "social-reactivities"
 kill_signal = "SIGINT"
@@ -10,9 +10,8 @@ processes = []
 
 [env]
   ASPNETCORE_URLS = "http://+:8080"
-  Cloudinary_CloudName = "dca1ta6c7"
   Cloudinary_ApiKey = "794216554693995"
-  
+  Cloudinary_CloudName = "dca1ta6c7"
 
 [experimental]
   auto_rollback = true
